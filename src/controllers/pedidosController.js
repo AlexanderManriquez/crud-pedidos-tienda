@@ -12,8 +12,8 @@ class PedidosController {
 
   async obtenerPedidosPorUsuario(req, res) {
     try {
-      const { usuarioId } = req.params;
-      const pedidos = await pedidosService.obtenerPedidosPorUsuario(usuarioId);
+      const { id } = req.params;
+      const pedidos = await pedidosService.obtenerPedidosPorUsuario(id);
       res.status(200).json(pedidos);
     } catch (error) {
       res.status(404).json({ error: error.message });
